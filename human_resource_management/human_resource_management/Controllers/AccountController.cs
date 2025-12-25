@@ -30,14 +30,7 @@ namespace human_resource_management.Controllers
         {
             if (ModelState.IsValid)
             {
-<<<<<<< HEAD
-                // Hash the password with SHA256
-                //string hashedPassword = HashPassword(model.MatKhau);
-
-                // Find user with matching username and hashed password
-=======
                 // Find user with matching username and password (plain text for now)
->>>>>>> ddff4f5123cbfdd5d8dc84f559dfb2190309d627
                 var user = db.TaiKhoans.FirstOrDefault(u => u.tenTK == model.TenTK && u.matKhau == model.MatKhau);
 
                 if (user != null)
@@ -76,20 +69,13 @@ namespace human_resource_management.Controllers
                     else
                     {
                         // Redirect to appropriate area based on role
-                        //switch (user.vaiTro.ToLower())
                         switch (user.vaiTro)
                         {
                             case "Admin":
                                 return RedirectToAction("Index", "Home", new { area = "Admin" });
-<<<<<<< HEAD
-                            case "nhân sự":
-                                return RedirectToAction("Index", "Home", new { area = "HumanResource" });
-                            case "nhanvien":
-=======
                             case "Nhân sự":
                                 return RedirectToAction("Index", "Home", new { area = "HumanResource" });
                             case "Nhân viên":
->>>>>>> ddff4f5123cbfdd5d8dc84f559dfb2190309d627
                                 return RedirectToAction("Index", "Home", new { area = "Employee" });
                             default:
                                 return RedirectToAction("Index", "Home");

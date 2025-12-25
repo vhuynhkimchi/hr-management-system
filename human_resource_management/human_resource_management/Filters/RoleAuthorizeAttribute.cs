@@ -56,20 +56,12 @@ namespace human_resource_management.Filters
                             new RouteValueDictionary(new { controller = "Home", action = "Index", area = "Admin" })
                         );
                         break;
-<<<<<<< HEAD
-                    case "nhân sự":
-=======
                     case "Nhân sự":
->>>>>>> ddff4f5123cbfdd5d8dc84f559dfb2190309d627
                         filterContext.Result = new RedirectToRouteResult(
                             new RouteValueDictionary(new { controller = "Home", action = "Index", area = "HumanResource" })
                         );
                         break;
-<<<<<<< HEAD
-                    case "nhanvien":
-=======
                     case "Nhân viên":
->>>>>>> ddff4f5123cbfdd5d8dc84f559dfb2190309d627
                         filterContext.Result = new RedirectToRouteResult(
                             new RouteValueDictionary(new { controller = "Home", action = "Index", area = "Employee" })
                         );

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using human_resource_management.Filters;
 using human_resource_management.Models;
@@ -9,11 +9,7 @@ using human_resource_management.Areas.HumanResource.Data;
 
 namespace human_resource_management.Areas.HumanResource.Controllers
 {
-<<<<<<< HEAD
-    [RoleAuthorize("nhân sự")]
-=======
     [RoleAuthorize("Nhân sự")]
->>>>>>> ddff4f5123cbfdd5d8dc84f559dfb2190309d627
     public class HomeController : Controller
     {
         private ModelDBContext db = new ModelDBContext();
@@ -31,8 +27,120 @@ namespace human_resource_management.Areas.HumanResource.Controllers
         /// </summary>
         public ActionResult ManagerEmployee()
         {
-            return View();
+            var nhanViens = db.NhanViens
+                .Include("PhongBan")
+                .Include("TaiKhoan")
+                .Include("HopDongs")
+                .ToList();
+            return View(nhanViens);
         }
+
+        #region Thêm mới nhân viên
+
+        /// <summary>
+        /// GET: Hiển thị form tạo hồ sơ nhân viên mới
+        /// - Chuẩn bị danh sách phòng ban cho dropdown
+        /// - Khởi tạo form trống
+        /// </summary>
+        public ActionResult Create()
+        {
+            // Lấy danh sách phòng ban để hiển thị trong dropdown
+            ViewBag.maPB = new SelectList(db.PhongBans, "maPB", "tenPB");
+            
+            // Trả về form với model rỗng
+            return View(new Models.FormModel.NhanVienForm());
+        }
+
+        /// <summary>
+        /// POST: Xử lý lưu thông tin nhân viên mới
+        /// - Kiểm tra tuổi >= 18
+        /// - Tạo nhân viên mới
+        /// - Tạo hợp đồng đầu tiên cho nhân viên
+        /// - Lưu vào database trong một transaction
+        /// </summary>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Models.FormModel.NhanVienForm form)
+        {
+            // Bước 1: Kiểm tra tuổi nhân viên (phải từ 18 tuổi trở lên)
+            if (form.ngaySinh.HasValue)
+            {
+                var tuoi = DateTime.Today.Year - form.ngaySinh.Value.Year;
+                
+                // Điều chỉnh nếu chưa đến ngày sinh trong năm nay
+                if (form.ngaySinh.Value.Date > DateTime.Today.AddYears(-tuoi))
+                {
+                    tuoi--;
+                }
+                
+                if (tuoi < 18)
+                {
+                    ModelState.AddModelError("ngaySinh", "Nhân viên phải từ 18 tuổi trở lên.");
+                }
+            }
+
+            // Bước 2: Nếu dữ liệu hợp lệ, tiến hành lưu
+            if (ModelState.IsValid)
+            {
+                // Sử dụng transaction để đảm bảo tính toàn vẹn dữ liệu
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        // 2.1: Tạo đối tượng Nhân viên từ form
+                        var nhanVien = new NhanVien
+                        {
+                            hoTen = form.hoTen,
+                            ngaySinh = form.ngaySinh,
+                            gioiTinh = form.gioiTinh,
+                            diaChi = form.diaChi,
+                            dienThoai = form.dienThoai,
+                            email = form.email,
+                            chucVu = form.chucVu,
+                            trangThaiLamViec = form.trangThaiLamViec ?? "Đang làm việc",
+                            ngayVaoLam = form.ngayVaoLam,
+                            maPB = form.maPB
+                        };
+
+                        // 2.2: Tạo Hợp đồng đầu tiên cho nhân viên
+                        var hopDong = new HopDong
+                        {
+                            loaiHD = form.loaiHD,
+                            heSoLuong = form.heSoLuong,
+                            luongCoBan = form.luongCoBan,
+                            ngayBatDau = form.ngayVaoLam ?? DateTime.Now,
+                            trangThai = true // Hợp đồng mặc định có hiệu lực
+                        };
+
+                        // 2.3: Gán hợp đồng vào nhân viên (Navigation Property)
+                        nhanVien.HopDongs.Add(hopDong);
+
+                        // 2.4: Lưu nhân viên vào database (EF tự lưu HopDong theo)
+                        db.NhanViens.Add(nhanVien);
+                        db.SaveChanges();
+
+                        // 2.5: Commit transaction nếu thành công
+                        transaction.Commit();
+
+                        // 2.6: Thiết lập thông báo thành công và chuyển hướng
+                        TempData["SuccessMessage"] = "Thêm nhân viên và khởi tạo hồ sơ thành công!";
+                        return RedirectToAction("ManagerEmployee");
+                    }
+                    catch (Exception ex)
+                    {
+                        // Rollback nếu có lỗi
+                        transaction.Rollback();
+                        ModelState.AddModelError("", "Có lỗi xảy ra khi lưu: " + ex.Message);
+                    }
+                }
+            }
+
+            // Nếu có lỗi, trả lại form với dữ liệu đã nhập
+            ViewBag.maPB = new SelectList(db.PhongBans, "maPB", "tenPB", form.maPB);
+            return View(form);
+        }
+
+        #endregion
 
         /// <summary>
         /// GET: Trang chọn kỳ lương
@@ -293,7 +401,15 @@ namespace human_resource_management.Areas.HumanResource.Controllers
 
         public ActionResult Statistical()
         {
-            return View();
+            // Sử dụng 'using' để quản lý bộ nhớ tốt nhất
+            using (ModelDBContext db = new ModelDBContext())
+            {
+                // Thêm .Include("NhanViens") để tải luôn danh sách nhân viên đi kèm phòng ban
+                // Giúp đếm số lượng chính xác ngay lập tức (Eager Loading)
+                var data = db.PhongBans.Include("NhanViens").ToList();
+
+                return View(data);
+            }
         }
 
         /// <summary>
