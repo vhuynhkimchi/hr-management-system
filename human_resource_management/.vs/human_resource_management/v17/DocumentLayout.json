@@ -1,17 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\PTPMHDT\\project-final\\hr-management-system\\human_resource_management\\",
+  "WorkspaceRootPath": "D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E051DB14-2061-4E9D-8547-DF13332F55D2}|human_resource_management\\human_resource_management.csproj|D:\\PTPMHDT\\project-final\\hr-management-system\\human_resource_management\\human_resource_management\\areas\\humanresource\\views\\home\\manageremployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E051DB14-2061-4E9D-8547-DF13332F55D2}|human_resource_management\\human_resource_management.csproj|d:\\ntu\\academicyear_2025_2026\\semester1\\hr-management-system\\human_resource_management\\human_resource_management\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E051DB14-2061-4E9D-8547-DF13332F55D2}|human_resource_management\\human_resource_management.csproj|solutionrelative:human_resource_management\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E051DB14-2061-4E9D-8547-DF13332F55D2}|human_resource_management\\human_resource_management.csproj|D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\human_resource_management\\areas\\humanresource\\views\\home\\manageremployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E051DB14-2061-4E9D-8547-DF13332F55D2}|human_resource_management\\human_resource_management.csproj|solutionrelative:human_resource_management\\areas\\humanresource\\views\\home\\manageremployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E051DB14-2061-4E9D-8547-DF13332F55D2}|human_resource_management\\human_resource_management.csproj|d:\\ptpmhdt\\project-final\\hr-management-system\\human_resource_management\\human_resource_management\\areas\\humanresource\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E051DB14-2061-4E9D-8547-DF13332F55D2}|human_resource_management\\human_resource_management.csproj|D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\human_resource_management\\areas\\humanresource\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E051DB14-2061-4E9D-8547-DF13332F55D2}|human_resource_management\\human_resource_management.csproj|solutionrelative:human_resource_management\\areas\\humanresource\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E051DB14-2061-4E9D-8547-DF13332F55D2}|human_resource_management\\human_resource_management.csproj|d:\\ptpmhdt\\project-final\\hr-management-system\\human_resource_management\\human_resource_management\\areas\\humanresource\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E051DB14-2061-4E9D-8547-DF13332F55D2}|human_resource_management\\human_resource_management.csproj|D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\human_resource_management\\areas\\humanresource\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E051DB14-2061-4E9D-8547-DF13332F55D2}|human_resource_management\\human_resource_management.csproj|solutionrelative:human_resource_management\\areas\\humanresource\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -22,46 +26,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\PTPMHDT\\project-final\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "human_resource_management\\Areas\\HumanResource\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\PTPMHDT\\project-final\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "human_resource_management\\Areas\\HumanResource\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAkwFAAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-05T12:50:42.484Z",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\human_resource_management\\Web.config",
+              "RelativeDocumentMoniker": "human_resource_management\\Web.config",
+              "ToolTip": "D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\human_resource_management\\Web.config",
+              "RelativeToolTip": "human_resource_management\\Web.config",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-01-06T10:21:53.377Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\PTPMHDT\\project-final\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "human_resource_management\\Areas\\HumanResource\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\PTPMHDT\\project-final\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "human_resource_management\\Areas\\HumanResource\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAowFEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T12:34:03.799Z",
-              "EditorCaption": ""
+              "Title": "ManagerEmployee.cshtml",
+              "DocumentMoniker": "D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Views\\Home\\ManagerEmployee.cshtml",
+              "RelativeDocumentMoniker": "human_resource_management\\Areas\\HumanResource\\Views\\Home\\ManagerEmployee.cshtml",
+              "ToolTip": "D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Views\\Home\\ManagerEmployee.cshtml",
+              "RelativeToolTip": "human_resource_management\\Areas\\HumanResource\\Views\\Home\\ManagerEmployee.cshtml",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAswKIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-24T15:39:23.886Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ManagerEmployee.cshtml",
-              "DocumentMoniker": "D:\\PTPMHDT\\project-final\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Views\\Home\\ManagerEmployee.cshtml",
-              "RelativeDocumentMoniker": "human_resource_management\\Areas\\HumanResource\\Views\\Home\\ManagerEmployee.cshtml",
-              "ToolTip": "D:\\PTPMHDT\\project-final\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Views\\Home\\ManagerEmployee.cshtml",
-              "RelativeToolTip": "human_resource_management\\Areas\\HumanResource\\Views\\Home\\ManagerEmployee.cshtml",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAqwKIAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "human_resource_management\\Areas\\HumanResource\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "human_resource_management\\Areas\\HumanResource\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAkwFAAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T15:39:23.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T12:50:42.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "human_resource_management\\Areas\\HumanResource\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\NTU\\AcademicYear_2025_2026\\Semester1\\hr-management-system\\human_resource_management\\human_resource_management\\Areas\\HumanResource\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "human_resource_management\\Areas\\HumanResource\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowFEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T12:34:03.799Z"
             }
           ]
         }

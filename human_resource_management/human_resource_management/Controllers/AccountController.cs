@@ -78,9 +78,10 @@ namespace human_resource_management.Controllers
                     }
                     else
                     {
-                        // Chuyển hướng đến Area tương ứng với Vai trò
+                        // Chuẩn hóa chuỗi vai trò trước khi so sánh
+                        string role = user.vaiTro?.Trim();
 
-                        switch (user.vaiTro)
+                        switch (role)
                         {
                             case "Admin":
                                 return RedirectToAction("Index", "Home", new { area = "Admin" });

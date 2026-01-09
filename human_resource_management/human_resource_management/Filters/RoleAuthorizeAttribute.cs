@@ -22,7 +22,7 @@ namespace human_resource_management.Filters
                 return false;
             }
 
-            // Get role from session and trim whitespace
+            // Lấy vai trò từ Session và xóa khoảng trắng thừa
             var userRole = httpContext.Session["UserRole"]?.ToString()?.Trim();
 
             if (string.IsNullOrEmpty(userRole))
@@ -30,7 +30,7 @@ namespace human_resource_management.Filters
                 return false;
             }
 
-            // Check if user's role is in the allowed roles list (case-insensitive comparison)
+            // Kiểm tra xem vai trò của người dùng có thuộc danh sách được phép hay không (so sánh không phân biệt hoa thường)
             return AllowedRoles.Any(role => role.Trim().Equals(userRole, System.StringComparison.OrdinalIgnoreCase));
         }
 
@@ -38,15 +38,15 @@ namespace human_resource_management.Filters
         {
             if (!filterContext.HttpContext.Request.IsAuthenticated)
             {
-                // User is not authenticated, redirect to login
+                // Người dùng chưa xác thực (chưa đăng nhập), chuyển hướng về trang đăng nhập
                 filterContext.Result = new RedirectToRouteResult(
                     new RouteValueDictionary(new { controller = "Account", action = "Login", area = "" })
                 );
             }
             else
             {
-                // User is authenticated but doesn't have the right role
-                // Redirect to access denied or their appropriate area
+                // Người dùng đã đăng nhập nhưng không đủ quyền truy cập vào chức năng này
+                // Chuyển hướng người dùng về trang chủ tương ứng với vai trò của họ
                 var userRole = filterContext.HttpContext.Session["UserRole"]?.ToString()?.Trim();
 
                 switch (userRole)
